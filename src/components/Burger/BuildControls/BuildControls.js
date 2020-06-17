@@ -5,8 +5,8 @@ import BuildControl from '../BuildControl/BuildControl';
 const controls = [
     {label:'Salad' , type : 'salad'},
     {label:'Meat', type : 'meat'},
-    {label:'Cheese', type : 'cheese'}
-
+    {label:'Cheese', type : 'cheese'},
+    {label:'Bacon', type : 'bacon'}
 
 ]
 const buildControls = (props)=>(
@@ -20,6 +20,10 @@ const buildControls = (props)=>(
                 added = {()=>props.ingredientAdded(ele.type)}
                 disabled = {props.disabled[ele.type]} />
         ))}
+        <button 
+            className= {classes.OrderButton}
+            onClick = {props.purchasing}
+            disabled = {!props.purchasable}  >Order Now</button>
     </div>
 )
 
