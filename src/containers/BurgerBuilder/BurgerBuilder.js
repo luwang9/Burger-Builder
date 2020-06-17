@@ -34,6 +34,13 @@ const BurgerBuilder = ()=>{
         })
     }
 
+    const purchasingCancleHandler = ()=>{
+        setPurchasingState({
+            purchasing:false
+        })
+    }
+
+
     const addIngredientHandler = (type)=>{
         const oldCount = burgerState.ingredients[type];
         let updatedPrice = burgerState.totalPrice+IngredientPrice[type];
@@ -84,7 +91,7 @@ const BurgerBuilder = ()=>{
 
     return (
         <Aux>
-            <Modal show ={purchasingState.purchasing} >
+            <Modal show ={purchasingState.purchasing} purchasingCancled = {purchasingCancleHandler}  >
                 <OrderSummary ingredients = {burgerState.ingredients} />
             </Modal>
             <Burger ingredients={burgerState.ingredients}/>
