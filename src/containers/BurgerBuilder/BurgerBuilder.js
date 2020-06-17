@@ -98,7 +98,8 @@ const BurgerBuilder = ()=>{
                 <OrderSummary 
                     ingredients = {burgerState.ingredients} 
                     purchasingCancled = {purchasingCancleHandler} 
-                    purchaseContinue = {purchasingContinueHandler} />
+                    purchaseContinue = {purchasingContinueHandler}
+                    price = {burgerState.totalPrice} />
             </Modal>
             <Burger ingredients={burgerState.ingredients}/>
             <BuildControls 
