@@ -39,6 +39,9 @@ const BurgerBuilder = ()=>{
             purchasing:false
         })
     }
+    const purchasingContinueHandler = ()=>{
+        alert("Continue")
+    }
 
 
     const addIngredientHandler = (type)=>{
@@ -92,7 +95,10 @@ const BurgerBuilder = ()=>{
     return (
         <Aux>
             <Modal show ={purchasingState.purchasing} purchasingCancled = {purchasingCancleHandler}  >
-                <OrderSummary ingredients = {burgerState.ingredients} />
+                <OrderSummary 
+                    ingredients = {burgerState.ingredients} 
+                    purchasingCancled = {purchasingCancleHandler} 
+                    purchaseContinue = {purchasingContinueHandler} />
             </Modal>
             <Burger ingredients={burgerState.ingredients}/>
             <BuildControls 
